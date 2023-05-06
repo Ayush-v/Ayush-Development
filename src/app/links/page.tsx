@@ -22,20 +22,18 @@ const LinkArray: LinkListType[] = [
 ];
 
 export default function Home() {
-  const [copyState, setCopyState] = useState<string | null>(null);
+  const [copyState, setCopyState] = useState("idle");
 
   const handleCopyClick = async () => {
     setCopyState("Loading");
     try {
       await navigator.clipboard.writeText("ayushverma1194@gmail.com");
-      // setTimeout(() => {}, 2500);
     } catch (error) {
-      alert("Failed to copy email!");
       setCopyState("Error");
     } finally {
       setCopyState("Success");
       setTimeout(() => {
-        setCopyState(null);
+        setCopyState("idle");
       }, 1500);
     }
   };
@@ -69,19 +67,14 @@ export default function Home() {
               className="flex items-center gap-3 rounded-md border border-white border-opacity-50 px-4 py-2"
             >
               <span>
-                {copyState ? (
-                  copyState === "Loading" ? (
-                    ""
-                  ) : copyState === "Error" ? (
-                    <Icon name="Error" />
-                  ) : copyState === "Success" ? (
-                    <Icon name="Success" className="text-green-500" size="20" />
-                  ) : (
-                    ""
-                  )
-                ) : (
-                  <Icon name="Copy" />
-                )}
+                {copyState === "idle" ? <Icon name="Copy" /> : null}
+                {copyState === "Loading" ? <Icon name="Sun" /> : null}
+                {copyState === "Success" ? (
+                  <Icon name="Success" className="text-green-500" size="20" />
+                ) : null}
+                {copyState === "Error" ? (
+                  <Icon name="Error" className="text-red-500" />
+                ) : null}
               </span>
               E-Mail
             </button>
