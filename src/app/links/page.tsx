@@ -20,8 +20,10 @@ export default function Home() {
             excellent software that improves the lives of those around me.
           </p>
           <div className="flex items-center justify-center gap-6">
-            <button className="rounded-md border px-4 py-2">Website</button>
-            <button className="flex items-center gap-3 rounded-md border px-4 py-2">
+            <button className="rounded-md border border-white border-opacity-50 px-4 py-2">
+              Website
+            </button>
+            <button className="flex items-center gap-3 rounded-md border border-white border-opacity-50 px-4 py-2">
               <span>
                 <svg
                   width="15"
@@ -44,17 +46,18 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="flex items-center rounded-lg border px-4 py-3">
+          <div className="flex items-center rounded-lg border border-white border-opacity-50 px-4 py-3">
             {/* <Image
               src={profilePic}
               alt="Profile"
               priority
               className="h-20 w-20 rounded-md bg-slate-400"
             /> */}
-            <div className="flex h-20 w-20 items-center justify-center rounded-md bg-gray-950">
+            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-950 sm:h-20 sm:w-20">
               <svg
                 width="50"
                 height="50"
+                // className="h-6 w-6 sm:h-12 sm:w-12"
                 viewBox="0 0 15 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +70,8 @@ export default function Home() {
                 ></path>
               </svg>
             </div>
-            <div className="ml-6 space-y-1">
-              <h3 className="text-lg font-semibold capitalize">my github</h3>
+            <div className="ml-4 space-y-1 sm:ml-6">
+              <h3 className="font-semibold capitalize">my github</h3>
               <p className="opacity-60">github.com/Ayush-v</p>
             </div>
             <a
@@ -78,8 +81,9 @@ export default function Home() {
               className="ml-auto rounded-md border border-white border-opacity-50 bg-black/70 p-4"
             >
               <svg
-                width="25"
-                height="25"
+                // width="25"
+                // height="25"
+                className="h-4 w-4 sm:h-6 sm:w-6"
                 viewBox="0 0 15 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
