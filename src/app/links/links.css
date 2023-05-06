@@ -1,0 +1,129 @@
+body {
+  background: black;
+  color: white;
+  background-image: url(../../../public/patternDark.png);
+  background-repeat: no-repeat;
+  background-position: 50% -250px;
+}
+
+.squares-background {
+  background-color: #ffffff;
+  opacity: 0.1;
+  /* background-image: linear-gradient(
+      #000000 0.6000000000000001px,
+      transparent 0.6000000000000001px
+    ),
+    linear-gradient(
+      to right,
+      #000000 0.6000000000000001px,
+      #ffffff 0.6000000000000001px
+    ); */
+  background-image: linear-gradient(rgb(0, 0, 0) 0.6px, transparent 0.6px),
+    linear-gradient(to right, rgb(0, 0, 0) 0.6px, rgb(255, 255, 255) 0.6px);
+  background-size: 12px 12px;
+}
+
+.new-pattern {
+  /* background-image: linear-gradient(
+      45deg,
+      rgba(128, 128, 128, 0.1) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(128, 128, 128, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(128, 128, 128, 0.1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px; */
+
+  /* background-image: linear-gradient(
+      45deg,
+      rgba(128, 128, 128, 0.1) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(128, 128, 128, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(128, 128, 128, 0.1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px; */
+
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 10px 10px;
+  background-color: white;
+}
+
+/* body {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 10px 10px;
+  background-color: white;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-color: black;
+  }
+
+  h1 {
+    color: white;
+  }
+} */
+
+/* body {
+  background-color: white;
+  opacity: 0.1;
+  background-image: linear-gradient(
+      #444cf7 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      90deg,
+      #444cf7 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      #444cf7 0.6000000000000001px,
+      transparent 0.6000000000000001px
+    ),
+    linear-gradient(
+      90deg,
+      #444cf7 0.6000000000000001px,
+      #e5e5f7 0.6000000000000001px
+    );
+  background-size: 30px 30px, 30px 30px, 6px 6px, 6px 6px;
+  background-position: -1.2000000000000002px -1.2000000000000002px,
+    -1.2000000000000002px -1.2000000000000002px,
+    -0.6000000000000001px -0.6000000000000001px,
+    -0.6000000000000001px -0.6000000000000001px;
+} */
+
+/* body {
+  background: black;
+  color: white;
+  background-image: url(../../public/patternDark.png);
+  background-repeat: no-repeat;
+  background-position: 50% -250px;
+} */
+/* 
+body {
+  background: #ffffff;
+  color: black;
+  background-image: url(../../public/patterLight.png);
+  background-repeat: no-repeat;
+  background-position: 50% -250px;
+} */
