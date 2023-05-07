@@ -22,20 +22,20 @@ const LinkArray: LinkListType[] = [
 ];
 
 export default function Home() {
-  const [copyState, setCopyState] = useState("idle");
+  const [copyState, setCopyState] = useState(false);
 
   const handleCopyClick = async () => {
-    setCopyState("Loading");
-    try {
-      await navigator.clipboard.writeText("ayushverma1194@gmail.com");
-    } catch (error) {
-      setCopyState("Error");
-    } finally {
-      setCopyState("Success");
-      setTimeout(() => {
-        setCopyState("idle");
-      }, 1500);
-    }
+    await navigator.clipboard
+      .writeText("ayushverma1194@gmail.com")
+      .then(() => {
+        setCopyState(true);
+        setTimeout(() => {
+          setCopyState(false);
+        }, 1500);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -67,29 +67,20 @@ export default function Home() {
               className="flex items-center gap-3 rounded-md border border-white border-opacity-50 px-4 py-2"
             >
               <span>
-                {copyState === "idle" ? <Icon name="Copy" /> : null}
-                {copyState === "Loading" ? <Icon name="Sun" /> : null}
-                {copyState === "Success" ? (
-                  <Icon name="Success" className="text-green-500" size="20" />
-                ) : null}
-                {copyState === "Error" ? (
-                  <Icon name="Error" className="text-red-500" />
-                ) : null}
+                {copyState ? (
+                  <Icon name="Success" size="20" className="text-green-500" />
+                ) : (
+                  <Icon name="Copy" />
+                )}
               </span>
               E-Mail
             </button>
           </div>
         </div>
 
-        <div className="mt-14 space-y-4">
+        <div className="my-14 space-y-4">
           {LinkArray.map((link) => (
-            <LinkList
-              key={link.href}
-              title={link.title}
-              href={link.href}
-              icon={link.icon}
-              description={link.description}
-            />
+            <LinkList key={link.href} {...link} />
           ))}
         </div>
       </main>
