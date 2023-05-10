@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import profilePic from "../../../public/ayush-profile.png";
 import LinkList, { type LinkListType } from "@/components/linkList";
 import Icon from "@/components/icons";
 import { useState } from "react";
@@ -39,14 +40,12 @@ export default function Home() {
 
   return (
     <>
-      <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-[120px]">
+      <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
         <div className="mx-auto w-fit overflow-hidden rounded-full border border-white border-opacity-50 bg-black/70 p-2">
           <Image
-            src="/ayush-profile.png"
+            src={profilePic}
             alt="Profile"
             priority
-            width={80}
-            height={80}
             className="h-20 w-20 sm:h-28 sm:w-28"
           />
         </div>
