@@ -12,13 +12,14 @@ export default function LinkList(link: LinkListType) {
         {link.icon}
       </div>
       <div className="ml-4 space-y-1 sm:ml-6">
-        <h3 className="font-semibold capitalize">{link.title}</h3>
+        <h2 className="font-semibold capitalize">{link.title}</h2>
         <p className="opacity-60">{link.description}</p>
       </div>
       <a
         href={link.href}
         target="_blank"
         rel="noreferrer"
+        aria-label={`Link to ${link.title} page`}
         className="ml-auto rounded-md border border-white border-opacity-50 p-3 sm:p-4"
       >
         <svg
