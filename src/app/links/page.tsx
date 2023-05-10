@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="links-pattern relative mx-auto max-w-screen-md px-6 pb-40 pt-[120px]">
+      <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-[120px]">
         <div className="mx-auto w-fit overflow-hidden rounded-full border border-white border-opacity-50 bg-black/70 p-2">
           <Image
             src="/ayush-profile.png"
