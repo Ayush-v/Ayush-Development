@@ -1,4 +1,5 @@
-import "./globals.css";
+import Header from "@/components/header";
+import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} overflow-x-hidden`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

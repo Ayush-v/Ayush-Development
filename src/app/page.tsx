@@ -1,10 +1,9 @@
-import Link from "next/link";
+import HeroSection from "@/components/heroSection";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="bg-square">
-      <h1>Hello World</h1>
-      <Link href="/links">Links</Link>
+    <main className="">
+      <HeroSection />
     </main>
   );
 }
