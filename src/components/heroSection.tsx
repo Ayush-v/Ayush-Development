@@ -27,13 +27,13 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="absolute inset-0 m-auto flex max-w-7xl flex-col items-center justify-between gap-16 px-4 py-14 sm:py-24 md:flex-row md:gap-0">
+      <section className="absolute inset-0 m-auto flex max-w-7xl flex-col items-center gap-16 px-4 py-40 lg:flex-row lg:justify-between lg:gap-0 lg:py-0">
         <div>
           <span className="text-sm uppercase opacity-80">
             {/* <TextReveal text="designer / developer" /> */}
             designer / developer
           </span>
-          <h1 className="mx-auto mb-6 max-w-4xl text-5xl font-semibold sm:text-7xl">
+          <h1 className="mx-auto mb-6 max-w-4xl text-5xl font-semibold lg:text-7xl">
             Hi, Im{" "}
             <span className="relative whitespace-nowrap">
               <svg
