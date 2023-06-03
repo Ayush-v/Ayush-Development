@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Icon from "./icons";
 import NavBar from "./navbar";
 
@@ -15,7 +16,9 @@ export default function Header() {
     /* <header className="absolute left-1/2 top-8 z-10 mb-5 w-full max-w-screen-xl -translate-x-1/2 px-4"> */
     <header className="mx-auto mt-8 w-full max-w-screen-xl px-4">
       <div className="flex items-center justify-between overflow-hidden">
-        <span className={`${nanumPen.className} text-5xl`}>&lt;A&gt;</span>
+        <Link href="/">
+          <span className={`${nanumPen.className} text-5xl`}>&lt;A&gt;</span>
+        </Link>
         <NavBar />
         <div className="flex gap-4">
           <Icon name="Github" size="20" />

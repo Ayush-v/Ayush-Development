@@ -13,7 +13,7 @@ export default function page() {
     // className="bg-square relative min-h-screen w-screen pt-24"
     >
       <Container>
-        <div className="max-w-2xl p-8">
+        <div className="mb-20 max-w-2xl p-8">
           <span className="text-sm uppercase opacity-80">
             {/* <TextReveal text="designer / developer" /> */}
             articles / blogs
