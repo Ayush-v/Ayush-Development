@@ -1,3 +1,4 @@
+import Container from "@/components/container";
 import NewBlog from "./new-blog.mdx";
 import HelloWorld from "@/app/hello.mdx";
 
@@ -8,8 +9,10 @@ export const metadata = {
 
 export default function page() {
   return (
-    <main className="bg-square relative min-h-screen w-screen pt-24">
-      <div className="mx-auto max-w-7xl lg:px-8">
+    <main
+    // className="bg-square relative min-h-screen w-screen pt-24"
+    >
+      <Container>
         <div className="max-w-2xl p-8">
           <span className="text-sm uppercase opacity-80">
             {/* <TextReveal text="designer / developer" /> */}
@@ -26,7 +29,8 @@ export default function page() {
           <NewBlog />
           <HelloWorld />
         </div>
-      </div>
+      </Container>
+      <div className="bg-square fixed inset-0 -z-50" />
     </main>
   );
 }

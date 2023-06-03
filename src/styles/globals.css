@@ -37,3 +37,24 @@ body {
   top: 0;
   opacity: 0.5;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background: #eaff96;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  opacity: 1;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  width: 5px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
