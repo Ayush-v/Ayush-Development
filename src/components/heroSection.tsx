@@ -3,7 +3,7 @@ import Image from "next/image";
 // import { motion } from "framer-motion";
 // import { Tilt } from "./Projects";
 // import TextReveal from "components/TextReveal";
-import heroImage from "../../public/heroImage.png";
+import heroImage from "../../public/images/heroImage.png";
 
 export default function HeroSection() {
   //   const pathVariants = {
@@ -27,7 +27,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="absolute inset-0 m-auto flex max-w-7xl flex-col items-center gap-16 px-4 py-40 lg:flex-row lg:justify-between lg:gap-0 lg:py-0">
+      <section className="absolute inset-0 mx-auto mb-auto mt-12 flex max-w-7xl flex-col items-center gap-8 px-4 py-40 lg:mt-36 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-0 lg:py-0">
         <div>
           <span className="text-sm uppercase opacity-80">
             {/* <TextReveal text="designer / developer" /> */}
@@ -70,13 +70,14 @@ export default function HeroSection() {
           </p>
         </div>
         {/* <Tilt options={options}> */}
-        <div className="max-h-[635px] max-w-[478px] overflow-hidden rounded-2xl">
-          <Image
-            src={heroImage}
-            alt=""
-            className="bg-cover bg-bottom bg-no-repeat"
-          />
-        </div>
+        {/* <div className="h-72 w-1/3 overflow-hidden rounded-2xl md:h-auto"> */}
+        {/* <div className="max-h-[635px] max-w-[478px] overflow-hidden rounded-2xl"> */}
+        <Image
+          src={heroImage}
+          alt=""
+          className="h-full max-h-[635px] w-auto rounded-2xl bg-cover bg-bottom bg-no-repeat"
+        />
+        {/* </div> */}
         {/* </Tilt> */}
       </section>
     </>

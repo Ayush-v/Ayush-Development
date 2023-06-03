@@ -2,7 +2,7 @@ import HeroSection from "@/components/heroSection";
 
 export default function Page() {
   return (
-    <main>
+    <main className="">
       <HeroSection />
     </main>
   );
