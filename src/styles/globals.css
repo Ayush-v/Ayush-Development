@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:where(html, body) {
+  height: 100%;
+}
+
 body {
   background-color: #010101;
   color: white;

@@ -5,6 +5,12 @@ import profilePic from "../../../public/ayush-profile.png";
 import LinkList, { type LinkListType } from "@/components/linkList";
 import Icon from "@/components/icons";
 import { useState } from "react";
+import Link from "next/link";
+
+// export const metadata = {
+//   title: "Ayush LinkTree",
+//   description: "all the links",
+// };
 
 const LinkArray: LinkListType[] = [
   {
@@ -56,12 +62,18 @@ export default function Home() {
             excellent software that improves the lives of those around me.
           </p>
           <div className="flex items-center justify-center gap-6">
-            <a
+            <Link
+              className="rounded-md border border-white border-opacity-50 px-4 py-2"
+              href="/"
+            >
+              Website
+            </Link>
+            {/* <a
               className="rounded-md border border-white border-opacity-50 px-4 py-2"
               href="https://www.ayushportfolio.com/"
             >
               Website
-            </a>
+            </a> */}
             <button
               onClick={handleCopyClick}
               className="flex items-center gap-3 rounded-md border border-white border-opacity-50 px-4 py-2"

@@ -3,14 +3,17 @@ export const metadata = {
   description: "all the links",
 };
 
-export default function RootLayout({
+export default function LinksLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="overflow-x-hidden">{children}</body>
-    </html>
+    <>
+      {/* Include shared UI here e.g. a header or sidebar */}
+      {/* <nav></nav> */}
+
+      {children}
+    </>
   );
 }

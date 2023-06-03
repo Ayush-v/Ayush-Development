@@ -13,11 +13,8 @@ export default function HeroSection() {
   //   };
 
   return (
-    <section className="flex h-[90dvh] items-center justify-center">
-      <div
-        className="flex max-w-7xl flex-col items-center gap-8 px-4 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-16 lg:py-0"
-        // className="absolute inset-0 m-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-40 lg:mt-36 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-0 lg:py-0"
-      >
+    <section className="mx-auto my-12 min-h-full w-full max-w-7xl scroll-m-20 px-6">
+      <div className="flex max-w-7xl flex-col items-center gap-8 px-4 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-16 lg:py-0">
         <div>
           <span className="text-sm uppercase opacity-80">
             {/* <TextReveal text="designer / developer" /> */}
