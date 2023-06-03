@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Dropdown from "./dropdown";
 
 let navList = [
   {
@@ -20,8 +21,9 @@ let navList = [
 
 export default function NavBar() {
   return (
-    <nav className="rounded-lg bg-white/[0.08] p-3">
+    <nav className="flex items-center space-x-1 rounded-lg bg-white/[0.08] p-3">
       <Navigation navLinks={navList} />
+      <Dropdown />
     </nav>
   );
 }

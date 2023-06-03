@@ -16,8 +16,12 @@ body {
   justify-content: center;
 } */
 
+/* html {
+  height: 100%;
+} */
+
 .bg-square::after {
-  background-image: url(/grid.svg);
+  background-image: url(/images/grid.svg);
   z-index: -1;
   position: absolute;
   content: "";
@@ -28,7 +32,7 @@ body {
 }
 
 .links-pattern::after {
-  background: url(/darkpattern.svg) no-repeat 50% -250px;
+  background: url(/images/darkpattern.svg) no-repeat 50% -250px;
   z-index: -1;
   position: absolute;
   content: "";

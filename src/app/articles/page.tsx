@@ -25,10 +25,11 @@ export default function page() {
             exploring the coding world with my knowledege
           </p>
         </div>
-        <div className="mdx mx-auto max-w-3xl dark:mdx-invert">
+        {/* <div className="mdx mx-auto max-w-3xl p-8 dark:mdx-invert">
           <NewBlog />
           <HelloWorld />
-        </div>
+        </div> */}
+        <div></div>
       </Container>
       <div className="bg-square fixed inset-0 -z-50" />
     </main>

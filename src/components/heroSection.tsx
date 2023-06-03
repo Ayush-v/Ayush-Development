@@ -13,38 +13,43 @@ export default function HeroSection() {
   //   };
 
   return (
-    <section className="absolute inset-0 m-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-40 lg:mt-36 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-0 lg:py-0">
-      <div>
-        <span className="text-sm uppercase opacity-80">
-          {/* <TextReveal text="designer / developer" /> */}
-          designer / developer
-        </span>
-        <h1 className="mx-auto mb-6 max-w-4xl text-5xl font-semibold lg:text-7xl">
-          Hi, Im{" "}
-          <span className="relative whitespace-nowrap">
-            <AnimatedStroke />
-            {/* <span className="relative">
+    <section className="flex h-[90dvh] items-center justify-center">
+      <div
+        className="flex max-w-7xl flex-col items-center gap-8 px-4 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-16 lg:py-0"
+        // className="absolute inset-0 m-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-40 lg:mt-36 lg:h-[70vh] lg:flex-row lg:justify-between lg:gap-0 lg:py-0"
+      >
+        <div>
+          <span className="text-sm uppercase opacity-80">
+            {/* <TextReveal text="designer / developer" /> */}
+            designer / developer
+          </span>
+          <h1 className="mx-auto mb-6 max-w-4xl text-5xl font-semibold lg:text-7xl">
+            Hi, Im{" "}
+            <span className="relative whitespace-nowrap">
+              <AnimatedStroke />
+              {/* <span className="relative">
                 <TextReveal text={"Ayush"} />
               </span> */}
-            Ayush
-          </span>
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl pr-4 text-lg tracking-tight text-white/50">
-          I love making the world a better place with my design and coding
-          skills. You&#39;re at the right place if you want to see how I can
-          bring your designs to life.
-        </p>
+              Ayush
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl pr-4 text-lg tracking-tight text-white/50">
+            I love making the world a better place with my design and coding
+            skills. You&#39;re at the right place if you want to see how I can
+            bring your designs to life.
+          </p>
+        </div>
+        {/* <Tilt options={options}> */}
+        <Image
+          src={"/images/heroImage.png"}
+          alt=""
+          priority
+          width={400}
+          height={540}
+          className="h-full max-h-[635px] w-auto rounded-2xl bg-cover bg-bottom bg-no-repeat"
+        />
+        {/* </Tilt> */}
       </div>
-      {/* <Tilt options={options}> */}
-      <Image
-        src={"/images/heroImage.png"}
-        alt=""
-        priority
-        width={400}
-        height={540}
-        className="h-full max-h-[635px] w-auto rounded-2xl bg-cover bg-bottom bg-no-repeat"
-      />
-      {/* </Tilt> */}
     </section>
   );
 }
