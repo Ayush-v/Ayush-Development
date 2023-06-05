@@ -37,7 +37,9 @@ export default function NavBar() {
 
 function Navigation({ className }: { className: string }) {
   return (
-    <nav className={`${className} rounded-lg bg-white/[0.08] p-3`}>
+    <nav
+      className={`${className} rounded-lg bg-zinc-800/90 p-3 shadow-lg shadow-zinc-800/5 backdrop-blur`}
+    >
       <div className="flex items-center space-x-1">
         <ul className="flex space-x-1">
           {navList.map((link) => (
@@ -109,7 +111,7 @@ function NavItem({ href, children }: NavItemProps) {
     <>
       <Link
         className={`${
-          isActive ? "" : "transition-opacity duration-300 hover:opacity-50"
+          isActive ? "" : "transition-colors duration-300 hover:bg-white/10"
         } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
         href={href}
       >

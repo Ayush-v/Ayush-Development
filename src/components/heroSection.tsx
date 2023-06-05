@@ -43,7 +43,7 @@ export default function HeroSection() {
           priority
           width={400}
           height={540}
-          className="h-full max-h-[635px] w-auto rounded-2xl bg-cover bg-bottom bg-no-repeat"
+          className="h-auto max-h-[635px] w-auto rounded-2xl bg-cover bg-bottom bg-no-repeat"
         />
         {/* </Tilt> */}
       </div>
