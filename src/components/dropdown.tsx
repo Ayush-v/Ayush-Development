@@ -1,5 +1,3 @@
-// "use client";
-
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 
@@ -16,7 +14,7 @@ export default function Dropdown() {
           <Link href="links">Link tree</Link>
         </DropdownMenu.Item>
         <DropdownMenu.Item className="focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
-          Item 2
+          Contact
         </DropdownMenu.Item>
       </DropdownMenu.Content>
     </DropdownMenu.Root>

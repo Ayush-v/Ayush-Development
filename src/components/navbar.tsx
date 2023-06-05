@@ -3,6 +3,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Dropdown from "./dropdown";
+import { ReactNode } from "react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import Icon from "./icons";
 
 let navList = [
   {
@@ -14,6 +17,10 @@ let navList = [
     href: "/about",
   },
   {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
     name: "Articles",
     href: "/articles",
   },
@@ -21,47 +28,102 @@ let navList = [
 
 export default function NavBar() {
   return (
-    <nav className="flex items-center space-x-1 rounded-lg bg-white/[0.08] p-3">
-      <Navigation navLinks={navList} />
-      <Dropdown />
+    <div className="flex flex-1 justify-end md:justify-center">
+      <Navigation className="hidden md:block" />
+      <MobileNavigation className="block md:hidden" />
+    </div>
+  );
+}
+
+function Navigation({ className }: { className: string }) {
+  return (
+    <nav className={`${className} rounded-lg bg-white/[0.08] p-3`}>
+      <div className="flex items-center space-x-1">
+        <ul className="flex space-x-1">
+          {navList.map((link) => (
+            <li key={link.name}>
+              <NavItem href={link.href}>{link.name}</NavItem>
+            </li>
+          ))}
+        </ul>
+        <Dropdown />
+      </div>
     </nav>
   );
 }
 
-function Navigation({ navLinks }: any) {
-  const pathname = usePathname();
+function MobileNavigation({ className }: { className: string }) {
+  return (
+    <nav className={className}>
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild>
+          <button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+            Menu
+            <Icon
+              name="ChevronDown"
+              className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
+            />
+          </button>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Portal>
+          <DropdownMenu.Content
+            className="z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            sideOffset={5}
+          >
+            {navList.map((link) => (
+              <DropdownMenu.Item key={link.name}>
+                <NavItem href={link.href}>{link.name}</NavItem>
+              </DropdownMenu.Item>
+            ))}
+            <DropdownMenu.Sub>
+              <DropdownMenu.SubTrigger>
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#010101] p-4 text-xs">
+                  •••
+                </div>
+              </DropdownMenu.SubTrigger>
+
+              <DropdownMenu.Portal>
+                <DropdownMenu.SubContent className={`[data-side]="left"`}>
+                  <DropdownMenu.Item>
+                    <NavItem href="links">links</NavItem>
+                  </DropdownMenu.Item>
+                </DropdownMenu.SubContent>
+              </DropdownMenu.Portal>
+            </DropdownMenu.Sub>
+          </DropdownMenu.Content>
+        </DropdownMenu.Portal>
+      </DropdownMenu.Root>
+    </nav>
+  );
+}
+
+type NavItemProps = {
+  href: string;
+  children: ReactNode;
+};
+
+function NavItem({ href, children }: NavItemProps) {
+  const isActive = usePathname() === href;
 
   return (
-    <ul className="flex space-x-1">
-      {navLinks.map((link: any) => {
-        const isActive = pathname === link.href;
-
-        return (
-          <li key={link.name}>
-            <Link
-              className={`${
-                isActive
-                  ? ""
-                  : "transition-opacity duration-300 hover:opacity-50"
-              } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
-              href={link.href}
-            >
-              {isActive ? (
-                <motion.div
-                  layoutId="active-pill"
-                  style={{
-                    borderRadius: 9999,
-                  }}
-                  className="absolute inset-0 bg-[#EAFF96]"
-                />
-              ) : null}
-              <span className="relative z-10 mix-blend-exclusion">
-                {link.name}
-              </span>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <>
+      <Link
+        className={`${
+          isActive ? "" : "transition-opacity duration-300 hover:opacity-50"
+        } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
+        href={href}
+      >
+        {isActive ? (
+          <motion.div
+            layoutId="active-pill"
+            style={{
+              borderRadius: 9999,
+            }}
+            className="absolute inset-0 bg-[#EAFF96]"
+          />
+        ) : null}
+        <span className="relative z-10 mix-blend-exclusion">{children}</span>
+      </Link>
+    </>
   );
 }
