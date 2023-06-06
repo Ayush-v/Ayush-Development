@@ -1,0 +1,11 @@
+Todo
+[] Footer
+[] Mobile Nav Design
+[] About Page
+[] Contact Page
+[] Projects Page
+[] Articles Page
+[] Theme
+
+FIXES
+[] Nanum Font not working

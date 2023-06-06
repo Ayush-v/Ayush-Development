@@ -40,8 +40,8 @@ function Navigation({ className }: { className: string }) {
     <nav
       className={`${className} rounded-full border border-zinc-800 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur`}
     >
-      <div className="flex items-center space-x-1">
-        <ul className="flex space-x-1">
+      <div className="flex items-center space-x-2">
+        <ul className="flex space-x-1.5">
           {navList.map((link) => (
             <li key={link.name}>
               <NavItem href={link.href}>{link.name}</NavItem>
@@ -69,7 +69,7 @@ function MobileNavigation({ className }: { className: string }) {
         </DropdownMenu.Trigger>
         <DropdownMenu.Portal>
           <DropdownMenu.Content
-            className="z-50 origin-top rounded-xl bg-white ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="z-50 w-40 origin-top rounded-xl bg-white p-4 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
             sideOffset={5}
           >
             <div className="flex flex-row-reverse items-center justify-between">
