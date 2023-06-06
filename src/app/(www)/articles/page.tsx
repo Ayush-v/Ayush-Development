@@ -1,23 +1,65 @@
 import Container from "@/components/container";
-import NewBlog from "./new-blog.mdx";
-import HelloWorld from "@/app/hello.mdx";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Articles",
   description: "all Articles",
 };
 
+let articleArray = [
+  {
+    date: "Sep 29, 2023",
+    title:
+      "How to split traffic and A/B test different page layouts on the same URL",
+    description:
+      "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+    timeToRead: "3",
+    tag: ["Css"],
+  },
+  {
+    date: "Sep 29, 2023",
+    title: "asdasdas",
+    description:
+      "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+    timeToRead: "3",
+    tag: ["Css"],
+  },
+  // {
+  //   date: "Sep 29, 2023",
+  //   title:
+  //     "How to split traffic and A/B test different page layouts on the same URL",
+  //   description:
+  //     "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+  //   timeToRead: "3",
+  //   tag: ["Css"],
+  // },
+  // {
+  //   date: "Sep 29, 2023",
+  //   title:
+  //     "How to split traffic and A/B test different page layouts on the same URL",
+  //   description:
+  //     "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+  //   timeToRead: "3",
+  //   tag: ["Css"],
+  // },
+  // {
+  //   date: "Sep 29, 2023",
+  //   title:
+  //     "How to split traffic and A/B test different page layouts on the same URL",
+  //   description:
+  //     "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+  //   timeToRead: "3",
+  //   tag: ["Css"],
+  // },
+];
+
 export default function page() {
   return (
-    <main
-    // className="bg-square relative min-h-screen w-screen pt-24"
-    >
+    <main>
       <Container>
-        <div className="mb-20 max-w-2xl p-8">
-          <span className="text-sm uppercase opacity-80">
-            {/* <TextReveal text="designer / developer" /> */}
-            articles / blogs
-          </span>
+        <div className="mb-8 max-w-2xl p-8 md:mb-20">
+          <span className="text-sm uppercase opacity-80">articles / blogs</span>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Cracking the Code Dungeons
           </h1>
@@ -25,13 +67,38 @@ export default function page() {
             exploring the coding world with my knowledege
           </p>
         </div>
-        {/* <div className="mdx mx-auto max-w-3xl p-8 dark:mdx-invert">
-          <NewBlog />
-          <HelloWorld />
-        </div> */}
-        <div></div>
+        <div className="m-8 space-y-14">
+          {articleArray.map((article) => (
+            <div key={article.title}>
+              <time
+                className="mb-4 flex items-center gap-4"
+                dateTime={article.date}
+              >
+                <span className="h-4 w-0.5 rounded-full bg-zinc-200" />
+                <span>{article.date}</span>
+              </time>
+              <Link href={`/articles/${encodeURI(article.title)}`}>
+                <div className="flex flex-col rounded-2xl border border-zinc-800 bg-black bg-opacity-5 p-2.5 backdrop-blur-sm backdrop-filter md:flex-row md:gap-6">
+                  <div className="relative aspect-video w-full flex-none overflow-hidden rounded-xl md:aspect-square md:w-56">
+                    <Image
+                      src="/images/heroImage.png"
+                      alt=""
+                      width={3024}
+                      height={4032}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="my-4">
+                    <h3 className="text-xl font-bold md:text-3xl">
+                      {article.title}
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </Container>
-      <div className="bg-square fixed inset-0 -z-50" />
     </main>
   );
 }

@@ -38,7 +38,7 @@ export default function NavBar() {
 function Navigation({ className }: { className: string }) {
   return (
     <nav
-      className={`${className} rounded-lg bg-zinc-800/90 p-3 shadow-lg shadow-zinc-800/5 backdrop-blur`}
+      className={`${className} rounded-full border border-zinc-800 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur`}
     >
       <div className="flex items-center space-x-1">
         <ul className="flex space-x-1">
@@ -69,12 +69,23 @@ function MobileNavigation({ className }: { className: string }) {
         </DropdownMenu.Trigger>
         <DropdownMenu.Portal>
           <DropdownMenu.Content
-            className="z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="z-50 origin-top rounded-xl bg-white ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
             sideOffset={5}
           >
+            <div className="flex flex-row-reverse items-center justify-between">
+              <button aria-label="Close menu" className="-m-1 p-1">
+                {/* <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" /> */}
+                X
+              </button>
+              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                Navigation
+              </h2>
+            </div>
             {navList.map((link) => (
-              <DropdownMenu.Item key={link.name}>
-                <NavItem href={link.href}>{link.name}</NavItem>
+              <DropdownMenu.Item key={link.name} className=" mt-4 px-4">
+                <NavItem href={link.href} className="text-sm font-medium">
+                  {link.name}
+                </NavItem>
               </DropdownMenu.Item>
             ))}
             <DropdownMenu.Sub>
@@ -85,7 +96,7 @@ function MobileNavigation({ className }: { className: string }) {
               </DropdownMenu.SubTrigger>
 
               <DropdownMenu.Portal>
-                <DropdownMenu.SubContent className={`[data-side]="left"`}>
+                <DropdownMenu.SubContent>
                   <DropdownMenu.Item>
                     <NavItem href="links">links</NavItem>
                   </DropdownMenu.Item>
@@ -102,10 +113,12 @@ function MobileNavigation({ className }: { className: string }) {
 type NavItemProps = {
   href: string;
   children: ReactNode;
+  className?: string;
 };
 
-function NavItem({ href, children }: NavItemProps) {
-  const isActive = usePathname() === href;
+function NavItem({ href, className, children }: NavItemProps) {
+  const path = usePathname();
+  const isActive = href === "/" ? path === href : path.startsWith(href);
 
   return (
     <>

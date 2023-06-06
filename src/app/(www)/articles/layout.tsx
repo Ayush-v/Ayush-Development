@@ -1,4 +1,4 @@
-export default function ArticleLayout({
+export default function ArticlesLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -9,6 +9,7 @@ export default function ArticleLayout({
       {/* <nav></nav> */}
 
       {children}
+      <div className="bg-square fixed inset-0 -z-50" />
     </section>
   );
 }
