@@ -21,11 +21,13 @@ export default function MainLayout({
       >
         <div className="flex items-center justify-between border-b border-white/50 pb-2">
           <h1 className="text-lg">
-            <span className="font-inter text-sm">Designed and Created By</span>{" "}
+            <span className="font-inter text-sm tracking-tighter">
+              Designed and Created By
+            </span>{" "}
             <br />
-            Ayush 🤟🏻
+            <span>Ayush 🤟🏻</span>
           </h1>
-          <ul className="flex gap-3 font-inter text-sm sm:gap-10">
+          <ul className="flex space-x-1.5 font-inter text-sm sm:gap-10">
             <li>
               <a
                 href="https://www.instagram.com/ayush_iosdev/"
@@ -60,7 +62,8 @@ export default function MainLayout({
         </div>
         <p className="flex items-center justify-end gap-1 text-right text-lg sm:text-2xl">
           <span className="font-inter text-sm">©</span>
-          {new Date().getFullYear()} Ayush
+          <span className="font-inter text-sm">{new Date().getFullYear()}</span>
+          Ayush
         </p>
       </footer>
     </div>
