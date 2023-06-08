@@ -6,6 +6,7 @@ import Dropdown from "./dropdown";
 import { ReactNode } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Icon from "./icons";
+import { cn } from "@/utils/tailwind-merge";
 
 let navList = [
   {
@@ -123,9 +124,13 @@ function NavItem({ href, className, children }: NavItemProps) {
   return (
     <>
       <Link
-        className={`${
-          isActive ? "" : "transition-colors duration-300 hover:bg-white/10"
-        } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
+        // className={`${
+        //   isActive ? "" : "transition-colors duration-300 hover:bg-white/10"
+        // } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
+        className={cn(
+          !isActive && "transition-colors duration-300 hover:bg-white/10",
+          "relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline"
+        )}
         href={href}
       >
         {isActive ? (

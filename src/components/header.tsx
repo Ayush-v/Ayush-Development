@@ -12,7 +12,7 @@ const nanumPen = Nanum_Pen_Script({
 
 export default function Header() {
   return (
-    <header className="mx-auto w-full max-w-screen-xl px-4 pt-8">
+    <header className="mx-auto w-full max-w-screen-2xl px-4 pt-8">
       <div className="flex items-center justify-between gap-4">
         <Link href="/">
           <span className={`${nanumPen.variable} font-nanum text-5xl`}>

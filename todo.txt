@@ -1,5 +1,5 @@
 Todo
-[] Footer
+[x] Footer
 [] Mobile Nav Design
 [] About Page
 [] Contact Page
