@@ -25,6 +25,22 @@ let articleArray = [
     timeToRead: "3",
     tag: ["Css"],
   },
+  {
+    date: "Sep 29, 2023",
+    title: "asdaadasdasdsdasdasdas",
+    description:
+      "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+    timeToRead: "3",
+    tag: ["Css"],
+  },
+  {
+    date: "Sep 29, 2023",
+    title: "asda",
+    description:
+      "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+    timeToRead: "3",
+    tag: ["Css"],
+  },
   // {
   //   date: "Sep 29, 2023",
   //   title:

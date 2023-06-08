@@ -18,7 +18,7 @@ export default function AnimatedStroke() {
       viewBox="0 0 280 39"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute left-0 top-[75%] -z-10 h-[0.58] w-full rotate-3 stroke-[#EAFF96]"
+      className="absolute left-0 top-[75%] -z-10 h-[0.58] w-full rotate-3 stroke-accent"
       preserveAspectRatio="none"
     >
       <motion.path

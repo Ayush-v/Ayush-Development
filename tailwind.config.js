@@ -9,7 +9,10 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["var(--font-inter)"],
-        nanum: ["var(--font-nanum-pen-script)"],
+        nanum: ["var(--font-nanum)", "sans-serif"],
+      },
+      colors: {
+        accent: "#EAFF96",
       },
     },
   },

@@ -7,7 +7,7 @@ import { Nanum_Pen_Script } from "next/font/google";
 const nanumPen = Nanum_Pen_Script({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-nanum-pen-script",
+  variable: "--font-nanum",
 });
 
 export default function Header() {
