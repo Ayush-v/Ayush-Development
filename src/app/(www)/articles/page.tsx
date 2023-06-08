@@ -15,7 +15,7 @@ let articleArray = [
     description:
       "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
     timeToRead: "3",
-    tag: ["Css"],
+    tag: ["TailwindCss", "Typescript", "Nextjs"],
   },
   {
     date: "Sep 29, 2023",
@@ -83,7 +83,7 @@ export default function page() {
             exploring the coding world with my knowledege
           </p>
         </div>
-        <div className="m-8 space-y-14">
+        <div className="relative m-8 space-y-14">
           {articleArray.map((article) => (
             <div key={article.title}>
               <time
@@ -104,11 +104,25 @@ export default function page() {
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                   </div>
-                  <div className="my-4">
+                  <div className="my-4 space-y-1.5">
                     <h3 className="text-xl font-bold md:text-3xl">
                       {article.title}
                     </h3>
+                    <p className="opacity-50">{article.description}</p>
+                    <ul className="space-x-2">
+                      {article.tag.map((tag) => (
+                        <li
+                          key={tag}
+                          className="inline-block rounded-full border border-zinc-800 bg-gradient-to-b from-black to-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                  <time className="absolute bottom-5 right-6">
+                    {article.timeToRead} min read
+                  </time>
                 </div>
               </Link>
             </div>

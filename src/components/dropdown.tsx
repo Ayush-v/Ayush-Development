@@ -5,7 +5,7 @@ export default function Dropdown() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800">
+        <button className="flex h-7 w-7 items-center justify-center rounded-full outline outline-1 outline-white/20">
           <svg
             width="15"
             height="15"
@@ -24,7 +24,7 @@ export default function Dropdown() {
         </button>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content
-        className="bg-popover text-popover-foreground animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] divide-y divide-zinc-800 overflow-hidden rounded-md border border-zinc-800 bg-neutral-950 p-1 shadow-md"
+        className="bg-popover text-popover-foreground animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] divide-y divide-zinc-800 overflow-hidden rounded-md border border-zinc-800 bg-gradient-to-b from-white/5 via-black to-white/5 p-1 shadow-md backdrop-blur"
         sideOffset={5}
       >
         <DropdownMenu.Item className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-white/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50">

@@ -39,7 +39,7 @@ export default function NavBar() {
 function Navigation({ className }: { className: string }) {
   return (
     <nav
-      className={`${className} rounded-full border border-zinc-800 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur`}
+      className={`${className} rounded-full border border-zinc-800 bg-gradient-to-b from-black to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur`}
     >
       <div className="flex items-center space-x-2">
         <ul className="flex space-x-1.5">
