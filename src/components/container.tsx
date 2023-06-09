@@ -1,3 +1,4 @@
+import { cn } from "@/utils/tailwind-merge";
 import { ReactNode } from "react";
 
 export default function Container({
@@ -8,7 +9,11 @@ export default function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto mt-20 max-w-7xl pb-20 lg:px-8 ${className}`}>
+    <div
+      className={cn(
+        `mx-auto mt-20 w-full max-w-7xl flex-1 pb-20 lg:px-8 ${className}`
+      )}
+    >
       {children}
     </div>
   );

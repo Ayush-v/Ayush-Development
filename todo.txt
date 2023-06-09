@@ -6,6 +6,7 @@ Todo
 [] Projects Page
 [] Articles Page
 [] Theme
+[] SEO (Important)
 
 FIXES
 [] Nanum Font not working

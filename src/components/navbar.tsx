@@ -76,7 +76,7 @@ function MobileNavigation({ className }: { className: string }) {
             <div className="flex flex-row-reverse items-center justify-between">
               <button aria-label="Close menu" className="-m-1 p-1">
                 {/* <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" /> */}
-                X
+                <Icon name="Close" />
               </button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                 Navigation

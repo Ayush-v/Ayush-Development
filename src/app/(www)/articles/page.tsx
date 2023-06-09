@@ -41,15 +41,15 @@ let articleArray = [
     timeToRead: "3",
     tag: ["Css"],
   },
-  // {
-  //   date: "Sep 29, 2023",
-  //   title:
-  //     "How to split traffic and A/B test different page layouts on the same URL",
-  //   description:
-  //     "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
-  //   timeToRead: "3",
-  //   tag: ["Css"],
-  // },
+  {
+    date: "Sep 29, 2023",
+    title:
+      "How to split traffic and A/B test different page layouts on the same URL",
+    description:
+      "Learn how to split traffic for A/B testing between different page layouts while retaining the same user-facing URL, using Netlify Edge Functions.",
+    timeToRead: "3",
+    tag: ["Css"],
+  },
   // {
   //   date: "Sep 29, 2023",
   //   title:
@@ -72,7 +72,7 @@ let articleArray = [
 
 export default function page() {
   return (
-    <main>
+    <>
       <Container>
         <div className="mb-8 max-w-2xl p-8 md:mb-20">
           <span className="text-sm uppercase opacity-80">articles / blogs</span>
@@ -129,6 +129,6 @@ export default function page() {
           ))}
         </div>
       </Container>
-    </main>
+    </>
   );
 }
