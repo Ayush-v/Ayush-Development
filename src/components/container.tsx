@@ -11,7 +11,7 @@ export default function Container({
   return (
     <div
       className={cn(
-        `mx-auto mt-20 w-full max-w-7xl flex-1 pb-20 lg:px-8 ${className}`
+        `mx-auto mt-4 w-full max-w-7xl flex-1 pb-20 md:mt-20 lg:px-8 ${className}`
       )}
     >
       {children}
