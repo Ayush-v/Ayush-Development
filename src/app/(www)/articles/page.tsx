@@ -1,3 +1,4 @@
+import BaffleText from "@/components/baffleText";
 import Container from "@/components/container";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,7 +76,10 @@ export default function page() {
     <>
       <Container>
         <div className="mb-8 max-w-2xl p-8 md:mb-20">
-          <span className="text-sm uppercase opacity-80">articles / blogs</span>
+          <BaffleText
+            text="articles / blogs"
+            className="text-sm uppercase opacity-80"
+          />
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Cracking the Code Dungeons
           </h1>
