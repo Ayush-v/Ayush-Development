@@ -1,8 +1,8 @@
 Todo
 [x] Footer
 [] Mobile Nav Design
-[] About Page
-[] Contact Page
+[-] About Page
+[x] Contact Page
 [] Projects Page
 [] Articles Page
 [] Theme
