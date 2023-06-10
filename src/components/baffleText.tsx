@@ -1,15 +1,18 @@
 "use client";
 import { cn } from "@/utils/tailwind-merge";
-import { useEffect, useRef } from "react";
+import { HTMLProps, useEffect, useRef } from "react";
 // @ts-ignore-next-line
 import { shuffle, ShuffleOptions } from "txt-shuffle";
 
-interface ShuffleTextProps {
+interface ShuffleTextProps extends HTMLProps<HTMLSpanElement> {
   text: string;
-  className: string;
 }
 
-export default function BaffleText({ text, className }: ShuffleTextProps) {
+export default function BaffleText({
+  text,
+  className,
+  ...props
+}: ShuffleTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export default function BaffleText({ text, className }: ShuffleTextProps) {
   }, [text]);
 
   return (
-    <span ref={containerRef} className={cn(className)}>
+    <span ref={containerRef} className={cn(className)} {...props}>
       {text}
     </span>
   );
