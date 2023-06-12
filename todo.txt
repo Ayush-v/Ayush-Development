@@ -5,8 +5,9 @@ Todo
 [x] Contact Page
 [] Projects Page
 [] Articles Page
-[] Theme
+[x] Theme
 [] SEO (Important)
+[] Article page
 
 FIXES
 [] Nanum Font not working

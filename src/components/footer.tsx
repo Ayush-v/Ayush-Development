@@ -16,17 +16,17 @@ export default function Footer() {
             Designed and Created By
           </span>{" "}
           <br />
-          <span>Ayush 🤟🏻</span>
+          <span className="text-xl">Ayush 🤟🏻</span>
         </h1>
         <ul className="flex space-x-1.5 font-inter text-sm sm:gap-10">
           <li>
             <a
-              href="https://www.instagram.com/ayush_iosdev/"
+              href="https://twitter.com/ayushverma1194"
               target="_blank"
               rel="noreferrer"
-              className="border-dotted transition duration-200 hover:border-b-2 hover:text-white"
+              className="border-dotted border-black transition duration-200 hover:border-b-2 dark:border-white"
             >
-              Instagram
+              Twitter
             </a>
           </li>
           <li>
@@ -34,7 +34,7 @@ export default function Footer() {
               href="https://github.com/Ayush-v"
               target="_blank"
               rel="noreferrer"
-              className="border-dotted transition duration-200 hover:border-b-2 hover:text-white"
+              className="border-dotted border-black transition duration-200 hover:border-b-2 dark:border-white"
             >
               Github
             </a>
@@ -44,7 +44,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/ayush2711"
               target="_blank"
               rel="noreferrer"
-              className="border-dotted transition duration-200 hover:border-b-2 hover:text-white"
+              className="border-dotted border-black transition duration-200 hover:border-b-2 dark:border-white"
             >
               LinkedIn
             </a>

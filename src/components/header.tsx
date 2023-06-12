@@ -25,12 +25,15 @@ export default function Header() {
           </span>
         </Link>
         <NavBar />
-        <div className="flex gap-4">
-          <Icon name="Github" size="20" />
+        <div className="flex items-center gap-4">
+          <a href="https://github.com/Ayush-v" target="_blank" rel="noreferrer">
+            <Icon name="Github" size="24" />
+          </a>
           <button
+            className="rounded-full bg-black/10 p-2 dark:bg-white/10"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            <Icon name="Moon" size="20" />
+            <Icon name={theme === "light" ? "Sun" : "Moon"} size="20" />
           </button>
         </div>
       </div>
