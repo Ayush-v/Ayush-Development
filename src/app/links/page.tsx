@@ -6,6 +6,7 @@ import LinkList, { type LinkListType } from "@/components/linkList";
 import Icon from "@/components/icons";
 import { useState } from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 // export const metadata = {
 //   title: "Ayush LinkTree",
@@ -44,10 +45,11 @@ export default function Home() {
       });
   };
 
+  const { theme, setTheme } = useTheme();
   return (
     <>
-      <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
-        <div className="mx-auto w-fit overflow-hidden rounded-full border border-white border-opacity-50 bg-black/70 p-2">
+      <main className="links-pattern-light links-pattern-dark adaptive relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
+        <div className="mx-auto w-fit overflow-hidden rounded-full border border-opacity-50 bg-black/10 p-2 dark:border-white dark:bg-black/70">
           <Image
             src={profilePic}
             alt="Profile"
@@ -63,7 +65,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-6">
             <Link
-              className="rounded-md border border-white border-opacity-50 px-4 py-2"
+              className="rounded-md border border-black border-opacity-50 px-4 py-2 dark:border-white"
               href="/"
             >
               Website
@@ -76,7 +78,7 @@ export default function Home() {
             </a> */}
             <button
               onClick={handleCopyClick}
-              className="flex items-center gap-3 rounded-md border border-white border-opacity-50 px-4 py-2"
+              className="flex items-center gap-3 rounded-md border border-black border-opacity-50 px-4 py-2 dark:border-white"
             >
               <span>
                 {copyState ? (
@@ -94,6 +96,11 @@ export default function Home() {
           {LinkArray.map((link) => (
             <LinkList key={link.href} {...link} />
           ))}
+          <button
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+            <Icon name="Moon" size="20" />
+          </button>
         </div>
       </main>
     </>

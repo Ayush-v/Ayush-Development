@@ -117,7 +117,7 @@ export default function page() {
                       {article.tag.map((tag) => (
                         <li
                           key={tag}
-                          className="inline-block rounded-full border border-zinc-800 bg-gradient-to-b from-black to-white/10 px-3 py-1 text-xs font-semibold text-white backdrop-blur"
+                          className="from-black/ inline-block rounded-full border border-zinc-800 bg-gradient-to-b from-black/5 to-white/10 px-3 py-1 text-xs font-semibold backdrop-blur dark:from-black"
                         >
                           {tag}
                         </li>

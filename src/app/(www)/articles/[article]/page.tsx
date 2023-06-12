@@ -3,10 +3,10 @@ import HelloWorld from "@/app/hello.mdx";
 
 export default function page({ params }: { params: { article: string } }) {
   return (
-    <div>
+    <div className="w-full">
       page Artcle
       {decodeURI(params.article.replace(/(\/index)?\.mdx$/, ""))}
-      <div className="mdx mx-auto max-w-3xl p-8 dark:mdx-invert">
+      <div className="mdx dark:mdx-invert mx-auto max-w-3xl p-8">
         <NewBlog />
         <HelloWorld />
       </div>

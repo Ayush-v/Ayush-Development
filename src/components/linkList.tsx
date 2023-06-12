@@ -7,7 +7,7 @@ export type LinkListType = {
 
 export default function LinkList(link: LinkListType) {
   return (
-    <div className="flex items-center rounded-lg border border-white border-opacity-50 px-4 py-3">
+    <div className="flex items-center rounded-lg border border-black border-opacity-50 px-4 py-3 dark:border-white">
       <div className="flex h-10 w-10 items-center justify-center rounded-md sm:h-20 sm:w-20">
         {link.icon}
       </div>
@@ -20,7 +20,7 @@ export default function LinkList(link: LinkListType) {
         target="_blank"
         rel="noreferrer"
         aria-label={`Link to ${link.title} page`}
-        className="ml-auto rounded-md border border-white border-opacity-50 p-3 sm:p-4"
+        className="ml-auto rounded-md border border-black border-opacity-50 p-3 dark:border-white sm:p-4"
       >
         <svg
           className="h-6 w-6"

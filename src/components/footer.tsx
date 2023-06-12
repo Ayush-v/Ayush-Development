@@ -10,7 +10,7 @@ export default function Footer() {
     <footer
       className={`${nanumPen.className} mx-auto w-full max-w-screen-2xl px-4 pb-6`}
     >
-      <div className="flex items-center justify-between border-b border-white/20 pb-2">
+      <div className="flex items-center justify-between border-b border-black/20 pb-2 dark:border-white/20">
         <h1 className="text-lg">
           <span className="font-inter text-sm tracking-tighter">
             Designed and Created By

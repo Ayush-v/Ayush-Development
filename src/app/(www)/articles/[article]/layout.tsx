@@ -7,13 +7,11 @@ export default function ArticleLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
-      {/* <nav></nav> */}
-      <Container className="rounded-2xl bg-zinc-950/70">
-        <Link href="/articles">Back</Link>
+    <section className="mx-auto p-8">
+      <div className="m-8 max-w-7xl rounded-2xl bg-gray-100 p-8 dark:bg-zinc-950/70">
+        {/* <Link href="/articles">Back</Link> */}
         {children}
-      </Container>
+      </div>
     </section>
   );
 }

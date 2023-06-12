@@ -17,7 +17,7 @@ export default function HomePage() {
             Ayush
           </span>
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl pr-4 text-lg tracking-tight text-white/50">
+        <p className="mx-auto mt-6 max-w-2xl pr-4 text-lg tracking-tight text-black/50 dark:text-white/50">
           I love making the world a better place with my design and coding
           skills. You&#39;re at the right place if you want to see how I can
           bring your designs to life.

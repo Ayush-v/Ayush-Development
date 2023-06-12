@@ -39,7 +39,7 @@ export default function NavBar() {
 function Navigation({ className }: { className: string }) {
   return (
     <nav
-      className={`${className} rounded-full border border-zinc-800 bg-gradient-to-b from-black to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur`}
+      className={`${className} rounded-full border border-zinc-400 bg-gradient-to-b from-black/10 to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur dark:border-zinc-800 dark:from-black`}
     >
       <div className="flex items-center space-x-2">
         <ul className="flex space-x-1.5">
@@ -129,7 +129,7 @@ function NavItem({ href, className, children }: NavItemProps) {
         // } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
         className={cn(
           !isActive && "transition-colors duration-300 hover:bg-white/10",
-          "relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline"
+          "relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 focus-visible:outline"
         )}
         href={href}
       >
@@ -142,7 +142,9 @@ function NavItem({ href, className, children }: NavItemProps) {
             className="absolute inset-0 bg-accent"
           />
         ) : null}
-        <span className="relative z-10 mix-blend-exclusion">{children}</span>
+        <span className="relative z-10 dark:mix-blend-exclusion">
+          {children}
+        </span>
       </Link>
     </>
   );
