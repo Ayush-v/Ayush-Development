@@ -70,40 +70,35 @@ function MobileNavigation({ className }: { className: string }) {
         </DropdownMenu.Trigger>
         <DropdownMenu.Portal>
           <DropdownMenu.Content
-            className="z-50 w-40 origin-top rounded-xl bg-white p-4 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
+            className="z-50 w-52 max-w-xs origin-top rounded-xl bg-white p-4 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
             sideOffset={5}
           >
-            <div className="flex flex-row-reverse items-center justify-between">
+            {/* <div className="flex flex-row-reverse items-center justify-between">
               <button aria-label="Close menu" className="-m-1 p-1">
-                {/* <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" /> */}
+                <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
                 <Icon name="Close" />
               </button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                 Navigation
               </h2>
-            </div>
+            </div> */}
             {navList.map((link) => (
-              <DropdownMenu.Item key={link.name} className=" mt-4 px-4">
-                <NavItem href={link.href} className="text-sm font-medium">
+              <DropdownMenu.Item key={link.name} className="mt-4 pr-4">
+                <NavItem href={link.href} className="block text-sm font-medium">
                   {link.name}
                 </NavItem>
               </DropdownMenu.Item>
             ))}
-            <DropdownMenu.Sub>
-              <DropdownMenu.SubTrigger>
-                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#010101] p-4 text-xs">
-                  •••
-                </div>
-              </DropdownMenu.SubTrigger>
-
-              <DropdownMenu.Portal>
-                <DropdownMenu.SubContent>
-                  <DropdownMenu.Item>
-                    <NavItem href="links">links</NavItem>
-                  </DropdownMenu.Item>
-                </DropdownMenu.SubContent>
-              </DropdownMenu.Portal>
-            </DropdownMenu.Sub>
+            <DropdownMenu.Item className="mt-4 pr-4">
+              <NavItem href="/links" className="block text-sm font-medium">
+                Links
+              </NavItem>
+            </DropdownMenu.Item>
+            <DropdownMenu.Item className="mt-4 pr-4">
+              <NavItem href="/contact" className="block text-sm font-medium">
+                Contact
+              </NavItem>
+            </DropdownMenu.Item>
           </DropdownMenu.Content>
         </DropdownMenu.Portal>
       </DropdownMenu.Root>
@@ -129,7 +124,8 @@ function NavItem({ href, className, children }: NavItemProps) {
         // } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
         className={cn(
           !isActive && "transition-colors duration-300 hover:bg-white/10",
-          "relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 focus-visible:outline"
+          "relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 focus-visible:outline",
+          className
         )}
         href={href}
       >
