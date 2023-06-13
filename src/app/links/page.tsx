@@ -48,14 +48,14 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
   return (
     <>
-      <main className="links-pattern-light links-pattern-dark adaptive relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
+      <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
         <button
           className="absolute right-16 top-10 rounded-full bg-black/10 p-3 dark:bg-white/10"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           <Icon name={theme === "light" ? "Sun" : "Moon"} size="20" />
         </button>
-        <div className="mx-auto w-fit overflow-hidden rounded-full border border-opacity-50 bg-black/10 p-2 dark:border-white dark:bg-black/70">
+        <div className="mx-auto w-fit overflow-hidden rounded-full border border-zinc-400 bg-black/10 p-2 dark:border-zinc-800 dark:bg-black/70">
           <Image
             src={profilePic}
             alt="Profile"

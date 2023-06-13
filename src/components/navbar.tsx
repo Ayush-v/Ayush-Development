@@ -139,7 +139,7 @@ function NavItem({ href, className, children }: NavItemProps) {
             style={{
               borderRadius: 9999,
             }}
-            className="absolute inset-0 bg-accent"
+            className="absolute inset-0 bg-accent-200"
           />
         ) : null}
         <span className="relative z-10 dark:mix-blend-exclusion">
