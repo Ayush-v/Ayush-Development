@@ -30,7 +30,7 @@ export default function Header() {
             <Icon name="Github" size="24" />
           </a>
           <button
-            className="rounded-full bg-black/10 p-2 dark:bg-white/10"
+            className="gradient-bg-to-b rounded-full p-2"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
             <Icon name={theme === "light" ? "Sun" : "Moon"} size="20" />

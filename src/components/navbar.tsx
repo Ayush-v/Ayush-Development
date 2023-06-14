@@ -1,12 +1,7 @@
-"use client";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
 import Dropdown from "./dropdown";
-import { ReactNode } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Icon from "./icons";
-import { cn } from "@/utils/tailwind-merge";
+import NavLink from "./navLink";
 
 let navList = [
   {
@@ -38,14 +33,12 @@ export default function NavBar() {
 
 function Navigation({ className }: { className: string }) {
   return (
-    <nav
-      className={`${className} rounded-full border border-zinc-400 bg-gradient-to-b from-black/10 to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur dark:border-zinc-800 dark:from-black`}
-    >
+    <nav className={`${className} gradient-bg-to-b rounded-full p-2`}>
       <div className="flex items-center space-x-2">
         <ul className="flex space-x-1.5">
           {navList.map((link) => (
             <li key={link.name}>
-              <NavItem href={link.href}>{link.name}</NavItem>
+              <NavLink href={link.href}>{link.name}</NavLink>
             </li>
           ))}
         </ul>
@@ -84,64 +77,24 @@ function MobileNavigation({ className }: { className: string }) {
             </div> */}
             {navList.map((link) => (
               <DropdownMenu.Item key={link.name} className="mt-4 pr-4">
-                <NavItem href={link.href} className="block text-sm font-medium">
+                <NavLink href={link.href} className="block text-sm font-medium">
                   {link.name}
-                </NavItem>
+                </NavLink>
               </DropdownMenu.Item>
             ))}
             <DropdownMenu.Item className="mt-4 pr-4">
-              <NavItem href="/links" className="block text-sm font-medium">
+              <NavLink href="/links" className="block text-sm font-medium">
                 Links
-              </NavItem>
+              </NavLink>
             </DropdownMenu.Item>
             <DropdownMenu.Item className="mt-4 pr-4">
-              <NavItem href="/contact" className="block text-sm font-medium">
+              <NavLink href="/contact" className="block text-sm font-medium">
                 Contact
-              </NavItem>
+              </NavLink>
             </DropdownMenu.Item>
           </DropdownMenu.Content>
         </DropdownMenu.Portal>
       </DropdownMenu.Root>
     </nav>
-  );
-}
-
-type NavItemProps = {
-  href: string;
-  children: ReactNode;
-  className?: string;
-};
-
-function NavItem({ href, className, children }: NavItemProps) {
-  const path = usePathname();
-  const isActive = href === "/" ? path === href : path.startsWith(href);
-
-  return (
-    <>
-      <Link
-        // className={`${
-        //   isActive ? "" : "transition-colors duration-300 hover:bg-white/10"
-        // } relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 outline-sky-400 focus-visible:outline`}
-        className={cn(
-          !isActive && "transition-colors duration-300 hover:bg-white/10",
-          "relative rounded-full px-3 py-1.5 text-sm font-medium outline-2 focus-visible:outline",
-          className
-        )}
-        href={href}
-      >
-        {isActive ? (
-          <motion.div
-            layoutId="active-pill"
-            style={{
-              borderRadius: 9999,
-            }}
-            className="absolute inset-0 bg-accent-200"
-          />
-        ) : null}
-        <span className="relative z-10 dark:mix-blend-exclusion">
-          {children}
-        </span>
-      </Link>
-    </>
   );
 }

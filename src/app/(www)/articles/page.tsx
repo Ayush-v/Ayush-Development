@@ -64,7 +64,7 @@ function ArticleTile({ article }: { article: (typeof articleArray)[number] }) {
         <span>{article.date}</span>
       </time>
       <Link href={`/articles/${encodeURI(article.title)}`}>
-        <div className="flex flex-col rounded-2xl border border-zinc-800 bg-black bg-opacity-5 p-2.5 backdrop-blur-sm backdrop-filter md:flex-row md:gap-6">
+        <div className="gradient-bg-to-b flex flex-col  rounded-2xl p-2.5 md:flex-row md:gap-6">
           <div className="relative aspect-video w-full flex-none overflow-hidden rounded-xl md:aspect-square md:w-56">
             <Image
               src={article.image}
@@ -81,7 +81,7 @@ function ArticleTile({ article }: { article: (typeof articleArray)[number] }) {
               {article.tag.map((tag) => (
                 <li
                   key={tag}
-                  className="from-black/ inline-block rounded-full border border-zinc-800 bg-gradient-to-b from-black/5 to-white/10 px-3 py-1 text-xs font-semibold backdrop-blur dark:from-black"
+                  className="gradient-bg-to-b inline-block rounded-full px-3 py-1 text-xs font-semibold"
                 >
                   {tag}
                 </li>

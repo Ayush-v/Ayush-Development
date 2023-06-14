@@ -23,10 +23,10 @@ export default function Dropdown() {
         </button>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content
-        className="animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] divide-y divide-zinc-400 overflow-hidden rounded-md border border-zinc-400 bg-white p-1 shadow-md dark:divide-zinc-800 dark:border-zinc-800 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/5 dark:via-black dark:to-white/5 dark:backdrop-blur"
+        className="animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] divide-y divide-zinc-400 overflow-hidden rounded-md border border-zinc-400 bg-white bg-gradient-to-b from-black/10 to-white/10 p-1 shadow-md backdrop-blur dark:divide-zinc-800 dark:border-zinc-800 dark:bg-transparent dark:from-white/5 dark:via-black dark:to-white/5"
         sideOffset={5}
       >
-        <DropdownMenu.Item className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-zinc-200/50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:hover:bg-white/10">
+        <DropdownMenu.Item className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent-200 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:hover:bg-white/10">
           <Link href="/links" className="flex items-center space-x-2">
             <svg
               width="15"
@@ -45,7 +45,7 @@ export default function Dropdown() {
             <span className="text-md font-medium opacity-95">Link tree</span>
           </Link>
         </DropdownMenu.Item>
-        <DropdownMenu.Item className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-zinc-200/50 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:hover:bg-white/10">
+        <DropdownMenu.Item className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent-200 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:hover:bg-white/10">
           <Link href="/contact" className="flex items-center space-x-2">
             <svg
               width="15"

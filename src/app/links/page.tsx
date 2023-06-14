@@ -50,12 +50,13 @@ export default function Home() {
     <>
       <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
         <button
-          className="absolute right-4 top-10 rounded-full bg-black/10 p-3 dark:bg-white/10 md:right-16"
+          // className="absolute right-4 top-10 rounded-full bg-black/10 p-3 dark:bg-white/10 md:right-16"
+          className="absolute right-4 top-10 rounded-full border border-zinc-400 bg-gradient-to-b from-black/10 to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur dark:border-zinc-800 dark:from-black dark:to-white/10"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           <Icon name={theme === "light" ? "Sun" : "Moon"} size="20" />
         </button>
-        <div className="mx-auto w-fit overflow-hidden rounded-full border border-zinc-400 bg-black/10 p-2 dark:border-zinc-800 dark:bg-black/70">
+        <div className="gradient-bg-to-b mx-auto w-fit overflow-hidden rounded-full p-2">
           <Image
             src={profilePic}
             alt="Profile"
@@ -71,7 +72,9 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-6">
             <Link
-              className="rounded-md border border-black border-opacity-50 px-4 py-2 dark:border-white"
+              className="gradient-bg-to-b rounded-md px-4 py-2"
+              // className="rounded-md border border-black border-opacity-50 px-4 py-2 dark:border-white gradient-bg-to-b"
+
               href="/"
             >
               Website
@@ -84,7 +87,8 @@ export default function Home() {
             </a> */}
             <button
               onClick={handleCopyClick}
-              className="flex items-center gap-3 rounded-md border border-black border-opacity-50 px-4 py-2 dark:border-white"
+              className="gradient-bg-to-b flex items-center gap-3  rounded-md px-4 py-2"
+              // className="gradient-bg-to-b rounded-md px-4 py-2"
             >
               <span>
                 {copyState ? (
