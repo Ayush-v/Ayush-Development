@@ -1,17 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import profilePic from "../../../public/ayush-profile.png";
 import LinkList, { type LinkListType } from "@/components/linkList";
 import Icon from "@/components/icons";
-import { useState } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
+import type { Metadata } from "next";
+import CopyEmail from "@/components/copyEmail";
+import ThemeToggleButton from "@/components/themeToggleButton";
 
-// export const metadata = {
-//   title: "Ayush LinkTree",
-//   description: "all the links",
-// };
+export const metadata: Metadata = {
+  title: "Ayush LinkTree",
+  description: "all the links",
+};
 
 const LinkArray: LinkListType[] = [
   {
@@ -29,33 +28,10 @@ const LinkArray: LinkListType[] = [
 ];
 
 export default function Home() {
-  const [copyState, setCopyState] = useState(false);
-
-  const handleCopyClick = async () => {
-    await navigator.clipboard
-      .writeText("ayushverma1194@gmail.com")
-      .then(() => {
-        setCopyState(true);
-        setTimeout(() => {
-          setCopyState(false);
-        }, 1500);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const { theme, setTheme } = useTheme();
   return (
     <>
       <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
-        <button
-          // className="absolute right-4 top-10 rounded-full bg-black/10 p-3 dark:bg-white/10 md:right-16"
-          className="absolute right-4 top-10 rounded-full border border-zinc-400 bg-gradient-to-b from-black/10 to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur dark:border-zinc-800 dark:from-black dark:to-white/10"
-          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        >
-          <Icon name={theme === "light" ? "Sun" : "Moon"} size="20" />
-        </button>
+        <ThemeToggleButton />
         <div className="gradient-bg-to-b mx-auto w-fit overflow-hidden rounded-full p-2">
           <Image
             src={profilePic}
@@ -71,34 +47,10 @@ export default function Home() {
             excellent software that improves the lives of those around me.
           </p>
           <div className="flex items-center justify-center gap-6">
-            <Link
-              className="gradient-bg-to-b rounded-md px-4 py-2"
-              // className="rounded-md border border-black border-opacity-50 px-4 py-2 dark:border-white gradient-bg-to-b"
-
-              href="/"
-            >
+            <Link className="gradient-bg-to-b rounded-md px-4 py-2" href="/">
               Website
             </Link>
-            {/* <a
-              className="rounded-md border border-white border-opacity-50 px-4 py-2"
-              href="https://www.ayushportfolio.com/"
-            >
-              Website
-            </a> */}
-            <button
-              onClick={handleCopyClick}
-              className="gradient-bg-to-b flex items-center gap-3  rounded-md px-4 py-2"
-              // className="gradient-bg-to-b rounded-md px-4 py-2"
-            >
-              <span>
-                {copyState ? (
-                  <Icon name="Success" size="20" className="text-green-500" />
-                ) : (
-                  <Icon name="Copy" />
-                )}
-              </span>
-              E-Mail
-            </button>
+            <CopyEmail />
           </div>
         </div>
 

@@ -1,13 +1,14 @@
 Todo
 [x] Footer
-[] Mobile Nav Design
+[x] Mobile Nav Design
 [-] About Page
 [x] Contact Page
 [] Projects Page
 [] Articles Page
-[x] Theme
-[] SEO (Important)
 [] Article page
+[x] Theme
+[] SEO (Important) Metadata
+[] Satoshi Font and Erode Font
 
 FIXES
 [] Nanum Font not working

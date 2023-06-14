@@ -20,6 +20,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  border-radius: 12px;
 }
 
 code[class*="language-"]::-moz-selection,

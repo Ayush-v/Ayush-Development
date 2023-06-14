@@ -8,7 +8,7 @@ const nanumPen = Nanum_Pen_Script({
 export default function Footer() {
   return (
     <footer
-      className={`${nanumPen.className} mx-auto w-full max-w-screen-2xl px-4 pb-6`}
+      className={`${nanumPen.className} mx-auto mb-4 w-full max-w-screen-2xl px-4`}
     >
       <div className="flex items-center justify-between border-b border-black/20 pb-2 dark:border-white/20">
         <h1 className="text-lg">
