@@ -2,6 +2,7 @@ import Dropdown from "./dropdown";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Icon from "./icons";
 import NavLink from "./navLink";
+import { useState } from "react";
 
 let navList = [
   {
@@ -49,11 +50,16 @@ function Navigation({ className }: { className: string }) {
 }
 
 function MobileNavigation({ className }: { className: string }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className={className}>
-      <DropdownMenu.Root>
+      <DropdownMenu.Root open={open}>
         <DropdownMenu.Trigger asChild>
-          <button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+          <button
+            onClick={() => setOpen(true)}
+            className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
+          >
             Menu
             <Icon
               name="ChevronDown"
@@ -76,18 +82,28 @@ function MobileNavigation({ className }: { className: string }) {
               </h2>
             </div> */}
             {navList.map((link) => (
-              <DropdownMenu.Item key={link.name} className="mt-4 pr-4">
+              <DropdownMenu.Item
+                key={link.name}
+                className="mt-4 pr-4"
+                onClick={() => setOpen(false)}
+              >
                 <NavLink href={link.href} className="block text-sm font-medium">
                   {link.name}
                 </NavLink>
               </DropdownMenu.Item>
             ))}
-            <DropdownMenu.Item className="mt-4 pr-4">
+            <DropdownMenu.Item
+              className="mt-4 pr-4"
+              onClick={() => setOpen(false)}
+            >
               <NavLink href="/links" className="block text-sm font-medium">
                 Links
               </NavLink>
             </DropdownMenu.Item>
-            <DropdownMenu.Item className="mt-4 pr-4">
+            <DropdownMenu.Item
+              className="mt-4 pr-4"
+              onClick={() => setOpen(false)}
+            >
               <NavLink href="/contact" className="block text-sm font-medium">
                 Contact
               </NavLink>
