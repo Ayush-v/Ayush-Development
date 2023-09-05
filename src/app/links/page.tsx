@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import profilePic from "../../../public/ayush-profile.png";
 import LinkList, { type LinkListType } from "@/components/linkList";
@@ -6,11 +7,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import CopyEmail from "@/components/copyEmail";
 import ThemeToggleButton from "@/components/themeToggleButton";
+import { useTheme } from "next-themes";
+import { cn } from "@/utils/tailwind-merge";
 
-export const metadata: Metadata = {
-  title: "Ayush LinkTree",
-  description: "all the links",
-};
+// export const metadata: Metadata = {
+//   title: "Ayush LinkTree",
+//   description: "all the links",
+// };
 
 const LinkArray: LinkListType[] = [
   {
@@ -28,9 +31,16 @@ const LinkArray: LinkListType[] = [
 ];
 
 export default function Home() {
+  const theme = useTheme();
+
   return (
     <>
-      <main className="links-pattern relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24">
+      <main
+        className={cn(
+          "relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24",
+          theme.theme === "light" ? "links-pattern-light" : "links-pattern"
+        )}
+      >
         <ThemeToggleButton />
         <div className="gradient-bg-to-b mx-auto w-fit overflow-hidden rounded-full p-2">
           <Image
