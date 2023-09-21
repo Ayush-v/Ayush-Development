@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NewBlog from "../new-blog.mdx";
-import HelloWorld from "@/app/hello.mdx";
+// import HelloWorld from "../hello.mdx";
 
 export default function page({ params }: { params: { article: string } }) {
   return (
@@ -29,7 +29,7 @@ export default function page({ params }: { params: { article: string } }) {
         {decodeURI(params.article.replace(/(\/index)?\.mdx$/, ""))}
       </h1>
       <div className="mdx dark:mdx-invert mx-auto mt-16 max-w-3xl">
-        <HelloWorld />
+        {/* <HelloWorld /> */}
         <NewBlog />
       </div>
     </div>
