@@ -52,14 +52,17 @@ function Navigation({ className }: { className: string }) {
 function MobileNavigation({ className }: { className: string }) {
   const [open, setOpen] = useState(false);
 
+  function closeModal() {
+    setTimeout(() => {
+      setOpen(false);
+    }, 650);
+  }
+
   return (
     <nav className={className}>
-      <DropdownMenu.Root open={open}>
+      <DropdownMenu.Root open={open} onOpenChange={setOpen}>
         <DropdownMenu.Trigger asChild>
-          <button
-            onClick={() => setOpen(true)}
-            className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
-          >
+          <button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
             Menu
             <Icon
               name="ChevronDown"
@@ -85,25 +88,19 @@ function MobileNavigation({ className }: { className: string }) {
               <DropdownMenu.Item
                 key={link.name}
                 className="mt-4 pr-4"
-                onClick={() => setOpen(false)}
+                onClick={closeModal}
               >
                 <NavLink href={link.href} className="block text-sm font-medium">
                   {link.name}
                 </NavLink>
               </DropdownMenu.Item>
             ))}
-            <DropdownMenu.Item
-              className="mt-4 pr-4"
-              onClick={() => setOpen(false)}
-            >
+            <DropdownMenu.Item className="mt-4 pr-4" onClick={closeModal}>
               <NavLink href="/links" className="block text-sm font-medium">
                 Links
               </NavLink>
             </DropdownMenu.Item>
-            <DropdownMenu.Item
-              className="mt-4 pr-4"
-              onClick={() => setOpen(false)}
-            >
+            <DropdownMenu.Item className="mt-4 pr-4" onClick={closeModal}>
               <NavLink href="/contact" className="block text-sm font-medium">
                 Contact
               </NavLink>
