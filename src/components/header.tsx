@@ -26,8 +26,13 @@ export default function Header() {
         </Link>
         <NavBar />
         <div className="flex items-center gap-4">
-          <a href="https://github.com/Ayush-v" target="_blank" rel="noreferrer">
-            <Icon name="Github" size="24" />
+          <a
+            href="https://github.com/Ayush-v"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="ayush-github"
+          >
+            <Icon name="Github" size="24" aria-hidden="true" />
           </a>
           <button
             className="gradient-bg-to-b rounded-full p-2"

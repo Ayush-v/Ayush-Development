@@ -8,8 +8,13 @@ export default function ThemeToggleButton() {
     <button
       className="absolute right-4 top-10 rounded-full border border-zinc-400 bg-gradient-to-b from-black/10 to-white/10 p-2 shadow-lg shadow-zinc-800/5 backdrop-blur dark:border-zinc-800 dark:from-black dark:to-white/10"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      aria-label="theme-toggle"
     >
-      <Icon name={theme === "light" ? "Sun" : "Moon"} size="20" />
+      <Icon
+        name={theme === "light" ? "Sun" : "Moon"}
+        size="20"
+        aria-hidden="true"
+      />
     </button>
   );
 }

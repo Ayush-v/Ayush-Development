@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import profilePic from "../../../public/ayush-profile.png";
 import LinkList, { type LinkListType } from "@/components/linkList";
@@ -10,10 +9,11 @@ import ThemeToggleButton from "@/components/themeToggleButton";
 import { useTheme } from "next-themes";
 import { cn } from "@/utils/tailwind-merge";
 
-// export const metadata: Metadata = {
-//   title: "Ayush LinkTree",
-//   description: "all the links",
-// };
+export const metadata: Metadata = {
+  title: "Ayush LinkTree",
+  description:
+    "Explore my web development journey through these links. Connect with me on GitHub, Twitter, and LinkedIn, and discover my personal portfolio showcasing my projects and skills.",
+};
 
 const LinkArray: LinkListType[] = [
   {
@@ -31,14 +31,14 @@ const LinkArray: LinkListType[] = [
 ];
 
 export default function Home() {
-  const theme = useTheme();
+  // const theme = useTheme();
 
   return (
     <>
       <main
         className={cn(
-          "relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24",
-          theme.theme === "light" ? "links-pattern-light" : "links-pattern"
+          "relative mx-auto max-w-screen-md overflow-hidden px-4 pt-24 links-pattern"
+          // theme.theme === "light" ? "links-pattern-light" : "links-pattern"
         )}
       >
         <ThemeToggleButton />
