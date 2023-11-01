@@ -9,6 +9,9 @@ const nextConfig = {
     domains: ["images.unsplash.com"],
   },
   productionBrowserSourceMaps: true,
+  experimental: {
+    webpackBuildWorker: true,
+  },
 };
 
 const withMDX = nextMDX({
